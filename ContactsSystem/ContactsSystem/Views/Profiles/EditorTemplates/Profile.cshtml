@@ -1,0 +1,70 @@
+﻿@model ContactsSystem.Models.Profile
+
+<br />
+@Html.HiddenFor(model => model.Id)
+
+<div class="container" style="width:65%;">
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", style = "height: 25px" })
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div>
+
+            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", style = "height: 25px" })
+
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div>
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div>
+
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", style = "height: 25px" })
+
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div>
+
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", style = "height: 25px" })
+
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div>
+            @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+    </div>
+</div>
+
+
+

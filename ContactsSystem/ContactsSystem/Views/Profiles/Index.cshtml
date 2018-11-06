@@ -1,0 +1,33 @@
+﻿
+@(Html.Kendo().Grid<ContactsSystem.Models.Profile>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.FirstName);
+        columns.Bound(c => c.LastName);
+        columns.Bound(c => c.Email);
+        columns.Bound(c => c.Phone);
+        columns.Bound(c => c.Address);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar => {
+            toolbar.Create();
+            toolbar.Excel();
+            toolbar.Pdf();
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("Profile"))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Profiles_Read", "Profiles"))
+          .Create(create => create.Action("Profiles_Create", "Profiles"))
+          .Update(update => update.Action("Profiles_Update", "Profiles"))
+          .Destroy(destroy => destroy.Action("Profiles_Destroy", "Profiles"))
+      )
+)
