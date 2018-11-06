@@ -38,6 +38,7 @@ namespace ContactsSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var entity = new Profile
                 {
                     FirstName = profile.FirstName,
