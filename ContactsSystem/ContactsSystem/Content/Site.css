@@ -177,8 +177,10 @@ p .k-button {
     font-size: 1em;
     color: #000;
 }
-/* #endregion */
 
+
+
+/* #endregion */
 @media (max-width: 767px) {
     #responsive-panel .k-item {
         float: none;

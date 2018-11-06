@@ -1,6 +1,7 @@
 ﻿
 @(Html.Kendo().Grid<ContactsSystem.Models.Profile>()
       .Name("grid")
+        .HtmlAttributes(new { style = "height: 77vh" })
       .Columns(columns =>
       {
         columns.Bound(c => c.FirstName);

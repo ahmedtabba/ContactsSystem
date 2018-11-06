@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ContactsSystem.Models
 {
@@ -27,7 +23,7 @@ namespace ContactsSystem.Models
         [Required(ErrorMessage = "You must provide a phone number")]
         [Display(Name = "Phone Number")]
         [DataType(DataType.PhoneNumber)]
-        // [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^\(?([0-9]{5})\)?([0-9]{9})$", ErrorMessage = "Not a valid phone number")]
         public string Phone { get; set; }
 
         public string Address { get; set; }
