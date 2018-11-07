@@ -16,6 +16,15 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div  class="bg-danger err-div">
+            <p class="text-danger">
+                @ViewData["ErrorMessage"]
+            </p>
+        </div>
+        <br />
+    }
 
 
     <div class="container" >

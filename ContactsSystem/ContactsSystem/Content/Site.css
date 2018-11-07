@@ -178,8 +178,10 @@ p .k-button {
     color: #000;
 }
 
-
-
+.err-div{
+    padding:25px 0 15px 0;
+    text-align:center;
+}
 /* #endregion */
 @media (max-width: 767px) {
     #responsive-panel .k-item {

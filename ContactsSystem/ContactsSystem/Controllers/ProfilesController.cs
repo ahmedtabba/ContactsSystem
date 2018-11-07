@@ -142,8 +142,12 @@ namespace ContactsSystem.Controllers
             if (!ModelState.IsValid)
                 return View(profile);
 
-
-
+            var profileInDb = db.Profiles.Where(p => p.FirstName.Equals(profile.FirstName) && p.LastName.Equals(profile.LastName)).ToList();
+            if (profileInDb.Count > 0)
+            {
+                ViewData["ErrorMessage"] = "This Profile is already in the System";
+                return View(profile);
+            }
 
             db.Profiles.Add(profile);
 
