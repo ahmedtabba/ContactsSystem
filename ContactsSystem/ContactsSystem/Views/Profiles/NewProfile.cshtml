@@ -1,0 +1,103 @@
+﻿@model ContactsSystem.Models.Profile
+
+@{
+    ViewBag.Title = "NewProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NewProfile</h2>
+
+@using (Html.BeginForm("NewProfile", "Profiles")) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+   
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+    <div class="container" >
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.FirstName)
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div>
+
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control"})
+
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div>
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div>
+
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.Phone)
+            </div>
+            <div>
+
+                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div>
+                @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+   
+
+  
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

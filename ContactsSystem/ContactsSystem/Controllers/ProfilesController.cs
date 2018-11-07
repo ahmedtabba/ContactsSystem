@@ -123,5 +123,35 @@ namespace ContactsSystem.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+
+        public ActionResult NewProfile()
+        {
+            var profile = new Profile();
+            return View(profile);
+        }
+
+
+
+        // POST: Products/NewMobile
+        [HttpPost]
+        public ActionResult NewProfile(Profile profile)
+        {
+
+
+            if (!ModelState.IsValid)
+                return View(profile);
+
+
+
+
+            db.Profiles.Add(profile);
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
